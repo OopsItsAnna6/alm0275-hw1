@@ -1,14 +1,10 @@
-CC=g++
-DEPS = starter.h
+CXX = g++
+CXXFLAGS = -Wall -std=c++11
 
-all: starter.o main.o
-	$(CC) -std=c++11 starter.o main.o
+all: homework1
 
-bowling: starter.o $(DEPS)
-	$(CC) -c -std=c++11 starter.cpp
+homework1: homework1.cpp
+	$(CXX) $(CXXFLAGS) -o homework1 homework1.cpp
 
-main: main.o $(DEPS)
-	$(CC) -c -std=c++11 main.cpp
-
-clean: 
-	rm *.o *.out
+clean:
+	rm -f homework1
